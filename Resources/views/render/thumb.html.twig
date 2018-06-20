@@ -11,10 +11,10 @@
     {% if image.enlarge is same as(true) %}
         {% set enlargedPath = asset(path)|imagine_filter(image.imagineFilterEnlarged) %}
         <a href="javascript:void(0);" data-featherlight="{{ enlargedPath | default(asset(path)) }}">
-            <img class="{{ image_class }}" src="{{ path | imagine_filter(image.imagineFilter) }}" />
+            <img class="{{ image_class }}" src="{{ asset(path) }}" />
         </a>
     {% else %}
-        <img class="{{ image_class }}" src="{{ path | imagine_filter(image.imagineFilter) }}" />
+        <img class="{{ image_class }}" src="{{ asset(path) }}" />
     {% endif %}
 {% else %}
     {% if image.holderUrl is not same as(null) %}
